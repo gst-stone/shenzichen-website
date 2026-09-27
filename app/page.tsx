@@ -7,7 +7,6 @@ const projects = [
     visual: "lastspace",
     description:
       "A fast tactical arena where every step changes the battlefield.",
-    href: "https://github.com/gst-stone/lastspace",
   },
   {
     number: "02",
@@ -17,7 +16,6 @@ const projects = [
     visual: "timeout",
     description:
       "A xianxia-inspired experiment about time, choices, and the price of immortality.",
-    href: "https://github.com/gst-stone/timeOut",
   },
   {
     number: "03",
@@ -27,7 +25,6 @@ const projects = [
     visual: "ai",
     description:
       "Exploring how code, generative AI, and Eastern aesthetics can become digital products.",
-    href: "#",
   },
 ];
 
@@ -104,13 +101,7 @@ export default function Home() {
 
         <div className="project-list project-showcase">
           {projects.map((project) => (
-            <a
-              className="project-card"
-              href={project.href}
-              target={project.href.startsWith("http") ? "_blank" : undefined}
-              rel={project.href.startsWith("http") ? "noreferrer" : undefined}
-              key={project.number}
-            >
+            <div className="project-card" key={project.number}>
               <span className="project-number">{project.number}</span>
               <div className={`project-visual project-visual-${project.visual}`} aria-hidden="true">
                   <span className="visual-mark">{project.visual === "lastspace" ? "最后一格" : project.visual === "timeout" ? "寿元将尽" : "AI × 东方"}</span>
@@ -121,8 +112,7 @@ export default function Home() {
                 <h3>{project.title}</h3>
                 <span>{project.description}</span>
               </div>
-              <span className="project-arrow">↗</span>
-            </a>
+            </div>
           ))}
         </div>
       </section>
@@ -169,9 +159,6 @@ export default function Home() {
           <h2>See you in the next experiment.</h2>
         </div>
         <div className="footer-meta">
-          <a href="https://github.com/gst-stone" target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
           <span>SHENZICHEN.WEBSITE</span>
         </div>
       </footer>

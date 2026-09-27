@@ -631,3 +631,28 @@ a {
     gap: 12px;
   }
 }
+
+/* Static project cards are not clickable — drop the link affordance */
+.project-card {
+  cursor: default;
+}
+
+.project-card:hover {
+  background: var(--surface);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ink-orbit,
+  .hero-sigil {
+    animation: none !important;
+  }
+
+  .button-primary:hover {
+    transform: none;
+  }
+}
