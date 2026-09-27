@@ -2,7 +2,9 @@ const projects = [
   {
     number: "01",
     title: "最后一格",
-    type: "Browser Game",
+    type: "BROWSER GAME",
+    status: "IN DEVELOPMENT",
+    visual: "lastspace",
     description:
       "A fast tactical arena where every step changes the battlefield.",
     href: "https://github.com/gst-stone/lastspace",
@@ -10,7 +12,9 @@ const projects = [
   {
     number: "02",
     title: "寿元将尽",
-    type: "Cultivation Game",
+    type: "CULTIVATION GAME",
+    status: "PROTOTYPE",
+    visual: "timeout",
     description:
       "A xianxia-inspired experiment about time, choices, and the price of immortality.",
     href: "https://github.com/gst-stone/timeOut",
@@ -18,7 +22,9 @@ const projects = [
   {
     number: "03",
     title: "AI × Eastern Culture",
-    type: "Experiment",
+    type: "AI EXPERIMENT",
+    status: "EXPLORING",
+    visual: "ai",
     description:
       "Exploring how code, generative AI, and Eastern aesthetics can become digital products.",
     href: "#",
@@ -96,7 +102,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="project-list">
+        <div className="project-list project-showcase">
           {projects.map((project) => (
             <a
               className="project-card"
@@ -106,8 +112,12 @@ export default function Home() {
               key={project.number}
             >
               <span className="project-number">{project.number}</span>
-              <div className="project-main">
-                <p>{project.type}</p>
+              <div className={`project-visual project-visual-${project.visual}`} aria-hidden="true">
+                  <span className="visual-mark">{project.visual === "lastspace" ? "最后一格" : project.visual === "timeout" ? "寿元将尽" : "AI × 东方"}</span>
+                  <span className="visual-orbit" />
+                </div>
+                <div className="project-main">
+                <div className="project-meta"><p>{project.type}</p><span>{project.status}</span></div>
                 <h3>{project.title}</h3>
                 <span>{project.description}</span>
               </div>
