@@ -44,7 +44,9 @@ export default function Home() {
       <section id="top" className="hero">
         <div className="hero-glow hero-glow-one" />
         <div className="hero-glow hero-glow-two" />
-        <div className="ink-orbit" aria-hidden="true" />
+        <div className="ink-orbit" aria-hidden="true"><span className="orbit-dot orbit-dot-one" /><span className="orbit-dot orbit-dot-two" /></div>
+        <div className="hero-sigil" aria-hidden="true"><span>道</span></div>
+        <div className="hero-grid" aria-hidden="true" />
 
         <div className="hero-copy">
           <p className="eyebrow">PROGRAMMER · AI · GAMES · EASTERN CULTURE</p>
