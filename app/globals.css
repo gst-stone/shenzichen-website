@@ -557,7 +557,19 @@ a {
     display: none;
   }
 
-  .hero-sigil {\n    right: 8vw;\n    top: 23vh;\n    width: 82px;\n    height: 82px;\n    font-size: 38px;\n  }\n\n  .hero-grid {\n    background-size: 55px 55px;\n  }\n\n  .ink-orbit {
+  .hero-sigil {
+    right: 8vw;
+    top: 23vh;
+    width: 82px;
+    height: 82px;
+    font-size: 38px;
+  }
+
+  .hero-grid {
+    background-size: 55px 55px;
+  }
+
+  .ink-orbit {
     width: 100vw;
     height: 100vw;
     right: -45vw;
@@ -578,7 +590,22 @@ a {
     margin-top: 25px;
   }
 
-  .project-showcase .project-card {\n    grid-template-columns: 1fr 20px;\n    min-height: 0;\n    gap: 20px;\n  }\n\n  .project-visual {\n    grid-column: 1 / -1;\n    height: 190px;\n  }\n\n  .project-showcase .project-main {\n    grid-column: 1;\n  }\n\n  .project-card {
+  .project-showcase .project-card {
+    grid-template-columns: 1fr 20px;
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .project-visual {
+    grid-column: 1 / -1;
+    height: 190px;
+  }
+
+  .project-showcase .project-main {
+    grid-column: 1;
+  }
+
+  .project-card {
     grid-template-columns: 42px 1fr 20px;
     gap: 14px;
     padding: 28px 0;
