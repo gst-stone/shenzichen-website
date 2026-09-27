@@ -214,6 +214,83 @@ a {
     inset 0 0 100px rgba(143, 184, 165, 0.04);
 }
 
+.ink-orbit {
+  animation: orbitDrift 18s ease-in-out infinite alternate;
+}
+
+.ink-orbit::before {
+  content: "";
+  position: absolute;
+  width: 34%;
+  height: 22%;
+  left: 18%;
+  top: 16%;
+  border-radius: 50%;
+  background: rgba(143, 184, 165, 0.08);
+  filter: blur(24px);
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 24px rgba(143, 184, 165, 0.8);
+}
+
+.orbit-dot-one { top: 13%; right: 25%; }
+.orbit-dot-two { bottom: 17%; left: 21%; opacity: 0.55; }
+
+.hero-sigil {
+  position: absolute;
+  z-index: 1;
+  right: 19vw;
+  top: 27vh;
+  width: 118px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(143, 184, 165, 0.18);
+  border-radius: 50%;
+  color: rgba(237, 241, 235, 0.16);
+  font-family: "Times New Roman", serif;
+  font-size: 54px;
+  transform: rotate(9deg);
+  animation: sigilFloat 7s ease-in-out infinite;
+}
+
+.hero-sigil::before,
+.hero-sigil::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(143, 184, 165, 0.08);
+  border-radius: 50%;
+}
+
+.hero-sigil::before { inset: 12px -18px; transform: rotate(35deg); }
+.hero-sigil::after { inset: -18px 12px; transform: rotate(-35deg); }
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: linear-gradient(rgba(143,184,165,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(143,184,165,.08) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(circle at 75% 45%, black, transparent 55%);
+  pointer-events: none;
+}
+
+@keyframes orbitDrift {
+  from { transform: rotate(-18deg) scale(1); }
+  to { transform: rotate(-12deg) scale(1.035); }
+}
+
+@keyframes sigilFloat {
+  0%, 100% { transform: rotate(9deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-10px); }
+}
+
 .ink-orbit::after {
   content: "";
   position: absolute;
@@ -411,7 +488,7 @@ a {
     display: none;
   }
 
-  .ink-orbit {
+  .hero-sigil {\n    right: 8vw;\n    top: 23vh;\n    width: 82px;\n    height: 82px;\n    font-size: 38px;\n  }\n\n  .hero-grid {\n    background-size: 55px 55px;\n  }\n\n  .ink-orbit {
     width: 100vw;
     height: 100vw;
     right: -45vw;
